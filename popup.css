@@ -1,0 +1,185 @@
+:root {
+  color-scheme: light;
+  --bg:
+    radial-gradient(circle at top left, #f3faff 0, #f3faff 26%, transparent 55%),
+    linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --text: #162033;
+  --muted: #61708a;
+  --accent: #2f6c4e;
+  --accent-strong: #24553d;
+  --accent-soft: #e5f4ec;
+  --border: rgba(97, 118, 153, 0.18);
+  --shadow: 0 18px 40px rgba(40, 72, 121, 0.12);
+  --shadow-soft: 0 10px 24px rgba(40, 72, 121, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  font-family:
+    "SF Pro Text",
+    "SF Pro Display",
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.popup {
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.hero {
+  padding: 4px 2px 0;
+}
+
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-copy {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.toggle-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.toggle-copy {
+  min-width: 0;
+}
+
+.toggle-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.toggle-help {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 56px;
+  height: 32px;
+  margin: 0;
+  border-radius: 999px;
+  border: 0;
+  background: #d6dfec;
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(72, 93, 131, 0.08);
+  transition:
+    background 160ms ease,
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(52, 74, 110, 0.18);
+  transition: transform 160ms ease;
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, var(--accent), #3d8d66);
+}
+
+input[type="checkbox"]:checked::after {
+  transform: translateX(22px);
+}
+
+.status-card {
+  padding: 14px 16px;
+  border: 1px solid rgba(97, 118, 153, 0.14);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+
+.status-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: 3px solid rgba(92, 144, 255, 0.24);
+  outline-offset: 3px;
+}
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

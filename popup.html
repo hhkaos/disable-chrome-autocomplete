@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disable Chrome Address Autofill</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <section class="hero">
+        <div class="hero-brand">
+          <img class="hero-icon" src="icons/icon-48.png" alt="">
+          <div>
+            <p class="eyebrow">Chrome privacy control</p>
+            <h1>Address Autofill</h1>
+          </div>
+        </div>
+        <p class="hero-copy">Turn saved address suggestions on or off without giving the extension access to page content.</p>
+      </section>
+
+      <label class="toggle-card" for="enabled-toggle">
+        <div class="toggle-copy">
+          <span class="toggle-label">Disable saved address suggestions</span>
+          <span class="toggle-help">Uses Chrome's built-in setting. Clean, browser-level control with no website permissions.</span>
+        </div>
+        <input id="enabled-toggle" type="checkbox" role="switch" aria-label="Disable Chrome address autofill">
+      </label>
+
+      <section class="status-card" aria-live="polite">
+        <div class="status-label">Current status</div>
+        <p class="status" id="status-text">Loading Chrome setting...</p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
