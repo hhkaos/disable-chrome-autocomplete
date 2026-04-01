@@ -6,6 +6,14 @@ The format is based on Keep a Changelog, and this project uses semantic versioni
 
 ## [Unreleased]
 
+### Added
+
+- Release packaging script that creates a ZIP with only the extension files.
+
+### Changed
+
+- Renamed the product to "Disable Form Autocomplete" to better fit demo and recording use cases.
+
 ## [1.1.0] - 2026-04-01
 
 ### Added
